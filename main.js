@@ -1,5 +1,5 @@
-import * as THREE from '/node_modules/three/build/three.module.js';
-import {GLTFLoader} from '/node_modules/three/examples/jsm/loaders/GLTFLoader.js'
+import * as THREE from 'three';
+import { GLTFLoader } from 'https://unpkg.com/three@0.138.3/examples/jsm/loaders/GLTFLoader.js';
 
 // Get a reference to the container element that will hold our scene
 const container = document.querySelector('#scene-container');

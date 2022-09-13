@@ -77,6 +77,6 @@ function animate(){
 animate()
 
 function moveCamera(){
-camera.position.x = 100 - window.scrollY / 50;
+camera.position.x = 100 - window.scrollY / 40;
 }
 document.onscroll = moveCamera

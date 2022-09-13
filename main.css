@@ -39,7 +39,9 @@ canvas {
   left: 0;
 }
 
-
+p{
+  font-size: 1rem;
+}
 
   header {
     grid-column: 2 / span 5;

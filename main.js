@@ -9,7 +9,6 @@ const scene = new THREE.Scene();
 
 // Set the background color
 scene.background = new THREE.Color('skyblue');
-
 // create the renderer
 const renderer = new THREE.WebGLRenderer();
 
@@ -33,34 +32,28 @@ const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 
 // every object is initially created at ( 0, 0, 0 )
 // move the camera back so we can view the scene
-camera.position.set( 100, 1, 6);
+camera.position.set( 103, 1, 8);
 camera.rotation.y = 90 * Math.PI / 180
 
 scene.fog = new THREE.Fog( scene.background, 1, 1000 );
+const hemilight = new THREE.HemisphereLight(0xffeeb1, 0x080820, 1);
+scene.add(hemilight);
+renderer.toneMapping = THREE.ReinhardToneMapping;
+renderer.toneMappingExposure = 2.3;
+renderer.shadowMap.enabled = true;
+// const ambientLight = new THREE.AmbientLight( 0xffffff, 0.4 );
+// scene.add( ambientLight );
 
-const hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.6 );
-hemiLight.color.setHSL( 0.6, 1, 0.6 );
-hemiLight.groundColor.setHSL( 0.095, 1, 0.60 );
-hemiLight.position.set( 0, 50, 0 );
-scene.add( hemiLight );
-
-const directionalLight = new THREE.DirectionalLight(0xFFFFFF, 1);
-directionalLight.color.setHSL( 0.1, 1, 0.80 );
-directionalLight.position.set( 30,30,30);
-
-directionalLight.castShadow = true;
-directionalLight.shadow.camera.far = 3500;
-directionalLight.shadow.bias = - 0.001;
-//Set up shadow properties for the light
-directionalLight.shadow.mapSize.width = 512; // default
-directionalLight.shadow.mapSize.height = 512; // default
-directionalLight.shadow.camera.near = 0.5; // default
-
-scene.add(directionalLight);
-
+//Create a PointLight and turn on shadows for the light
+const light = new THREE.PointLight( 0xffa95c, 4);
+light.castShadow = true; // default false
+light.shadow.bias = -0.0001;
+light.shadow.mapSize.width = 1024*4;
+light.shadow.mapSize.height = 1024*4;
+scene.add( light );
 
 const assetLoader = new GLTFLoader();
-const modelUrl = new URL('assets/hemsida.glb', import.meta.url);
+const modelUrl = new URL('assets/hemsida2.glb', import.meta.url);
 
 assetLoader.load(modelUrl.href, function(gltf) {
   scene.add(gltf.scene);
@@ -78,12 +71,12 @@ assetLoader.load(modelUrl.href, function(gltf) {
 function animate(){
   requestAnimationFrame(animate);
   renderer.render(scene,camera);
+  light.position.set(camera.position.x + 10, camera.position.y + 10, camera.position.z + 10)
 }
 
 animate()
 
 function moveCamera(){
 camera.position.x = 100 - window.scrollY / 50;
-camera.position.z = 6 - window.scrollY / -500;
 }
 document.onscroll = moveCamera

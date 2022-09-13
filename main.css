@@ -16,7 +16,7 @@ canvas {
 
 main {
   width: 100vw;
-  color: white;
+  color: black;
   z-index: 99;
   position: absolute;
   width: 100%;
@@ -51,7 +51,8 @@ canvas {
   section {
     grid-column: 2 / 8;
     padding: 1rem;
-    background: var(--dark-bg);
+    background-color:antiquewhite;
+
     font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: var(--spacing);

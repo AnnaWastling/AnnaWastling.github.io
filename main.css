@@ -53,7 +53,7 @@ p{
   section {
     grid-column: 2 / 8;
     padding: 1rem;
-    background-color:antiquewhite;
+    background-color:rgb(250, 235, 215);
 
     font-size: 1.25rem;
     line-height: 1.5;
@@ -63,3 +63,32 @@ p{
   .left {
     grid-column: 6 / 12;
   }
+
+  /* if desktop */
+  .mobile {
+    display: none;
+}
+    /* if mobile device max width 380px */
+    @media only screen and (max-device-width: 380px) {
+      .mobile{display: block;}       
+      .desktop {display: none;}
+      body{
+        background-color: rgb(97, 97, 97);
+      }
+      section {
+        grid-column: 2 / 8;
+        padding: 1rem;
+        background-color:rgb(97, 97, 97);
+        color:rgb(255, 254, 250);
+        font-size: 1.25rem;
+        line-height: 1.5;
+        margin-bottom: var(--spacing);
+      }
+      h1, h2, h3, blockquote, p {
+        font-family: elevon, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        color:rgb(255, 254, 250);
+      }
+      
+  } 

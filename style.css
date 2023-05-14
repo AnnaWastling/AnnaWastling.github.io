@@ -1,0 +1,83 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+canvas{
+    width:100%;
+    height:100%;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: black;
+}
+  
+/* Title */
+.title {
+    position: absolute;
+    top: 1%;
+    left: 10%;
+}
+
+/* About Me */
+.about-me {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 40%;
+}
+
+/* Projects */
+.projects {
+    position: absolute;
+    top: 45%;
+    right: 5%;
+    width: 40%;
+}
+
+/* Knowledge */
+.knowledge{
+    position: absolute;
+    top: 60%;
+    left: 2%;
+    width: 40%;
+}
+
+/* Contacts */
+.contacts {
+    position: absolute;
+    bottom: 10%;
+    right: 2%;
+    width: 40%;
+}
+
+.section-title-text{
+    display: block;
+    font-size: 40px;
+    font-weight: 500;
+    transform-origin: left;
+    z-index: 5;
+    text-transform: uppercase;
+
+  }
+  .main-title{
+    font-size: 64px;
+  }
+  
+  .main-description{
+    font-size: 18px;
+  }
+
+  .portfolio{
+    font-size: 32px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 5%;
+    right: 12%;
+  }
+  

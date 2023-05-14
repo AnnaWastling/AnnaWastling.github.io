@@ -4,165 +4,45 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Anna Wästling</title>
-		<link href="main.css" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
 	<body>
-		<div id = "content">
-			<div class = "desktop">
-				<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
-
-					<script type="importmap">
-						{
-							"imports": {
-								"three": "https://unpkg.com/three@0.138.3/build/three.module.js"
-							}
-						}
-					</script>
-					<script type="module" src="main.js"></script>
-					<div id="scene-container">
-						<canvas></canvas>
-					</div>
-					<main>
-
-				<header>
-					<h1></h1>
-					<p></p>
-				</header>
-				<header>
-					<h1></h1>
-					<p></p>
-				</header>
-
-				<section>
-					<h2>Studies</h2>
-					<p>
-						I currently am taking my degree in Master of Science in Media Technology
-						and Engineering. I study my fifth year and plan to graduate 2023. I have taken courses like Advanced global illumination and
+			<div class="container">
+				<canvas id="startAnimation" width=100 height=100></canvas>
+				<div class="title">
+					<h1 class="main-title">Anna Wästling</h1> 
+					<p class="main-description">M.sc. Student in Media Technology and Engineering - 5th year</p>
+				</div>
+				<div class="portfolio"><p>Portfolio</p></div>
+				<div class="about-me">
+					<h2 class="section-title-text">About me</h2>
+					<p>	
+						I am currently taking my degree in Master of Science in Media Technology
+						and Engineering. I study my fifth year and plan to graduate 2023. 
+					</p>
+				</div>
+				<div class="projects">
+					<h2 class="section-title-text">projects</h2>
+					<A HREF="projects.html">Projects</A>
+				</div>
+				<div class="knowledge">
+					<h2 class="section-title-text">knowledge</h2>
+					<p>I have taken courses like Advanced global illumination and
 						rendering, VR-technology, Media production for immersive environments, sound and image compression, Procedural methods for images, Modeling and animations, Techniques for advanced computergames, Design of computer games and Machine
-						learning for social media.
-
-					</p>
-
-				</section>
-
-				<section class="light">
-					<h2>Projects and labs</h2>
-					<h3>Modeling and animations</h3>
-					<img src="assets/flatshading.png" alt=""style="width:500px;height:400px;">
-					<br>
-					A series of labs in computer graphics. 
-					<br>
-					<a href="https://annawastling.github.io/reports/TNM079___Modeling_And_Animation__Lab_Report_1.pdf">Lab report - Half edge data structure </a>
-					<br>
-					<a href="https://annawastling.github.io/reports/TNM079___Modeling_And_Animation__Lab_Report_2.pdf">Lab report - Mesh decimation</a>
-					<br>
-					<a href="https://annawastling.github.io/reports/TNM079___Modeling_And_Animation__Lab_Report_3.pdf">Lab report - Mesh subdivision</a>
-					<br>
-					<a href="https://annawastling.github.io/reports/TNM079___Modeling_And_Animation__Lab_Report_4.pdf">Lab report - Implicit geometry</a>
-					<br>
-					<a href="https://annawastling.github.io/reports/TNM079___Modeling_And_Animation__Lab_Report_5.pdf">Lab report - Level set framework</a>
-					<br>
-					<a href="https://annawastling.github.io/reports/TNM079___Modeling_And_Animation__Lab_Report_6.pdf">Lab report - Simulating fluids</a>
-					<h3>Monte Carlo Ray Tracer</h3>
-					<img src="assets/8.png" alt=""style="width:500px;height:500px;">
-					<br>
-					<p>A Monte carlo ray tracer that was implemented in the CPU</p>
-					<a href="https://annawastling.github.io/reports/TNCG15_report (1).pdf"> Report</a>
-					<h3>Media production for immersive environments</h3>
-					<img src="assets/ladybug.png" alt=""style="width:500px;height:300px;">
-					<p>A shortfilm that was produced for the dome in "Visualiseringscenter C". </p>
-					<h3>Image Processing</h3>
-					<img src="assets/not_opt_32_50.png" alt=""style="width:500px;height:500px;">
-					<br>		
-					<p>A digital image reproduced by using other images from the same artist</p>
-					<a href="https://annawastling.github.io/reports/TNM097_projectreport.pdf"> Report</a>
-					<br>
-					<h3>Procedural Image</h3>		
-					<img src="assets/seals.png" alt=""style="width:500px;height:500px;">
-					<p>A procedural scene containing seals</p>
-
-					<a href="https://annawastling.github.io/Procedural_Seals/"> Demo</a>
-					<br>
-					<a href="https://github.com/AnnaWastling/Procedural_Seals/blob/main/World.js"> Code</a>
-
-					<h3>Game</h3>		
-					<iframe width="420" height="315"
-					src="https://www.youtube.com/embed/iQteBekuY_o">
-					</iframe>
-					<br>
-					<p>A short game developed by me and Edvin Nordin</p>
-					<p>
-					</p>
-
-				</section>
-
-
-				<section class="left">
-					<h2>Other projects</h2>
-					<p>
-						Coming soon!
-					</p>
-
-				</section>
-				</main>
+						learning for social media.</p>
+				</div>
+				<div class="contacts">
+					<h2 class="section-title-text">contacts</h2>
+					<i class="fa fa-envelope"></i> <p>Annawastling@hotmail.com</p>
+					<i class="fa fa-linkedin-square"></i> <br>
+					<A HREF=https://www.linkedin.com/in/anna-waestling> Visit my linkedin</A>
+				</div>
 			</div>
-		</div>
 
-		<div class = "mobile">
-			<header>
-				<h1>Welcome to my portfolio</h1>
-				<p>Access the website from a computer for a better experience</p>
-			</header>
-
-			<section>
-				<h2>Studies</h2>
-				<p>
-					I currently am taking my degree in Master of Science in Media Technology
-					and Engineering. I study my fifth year and plan to graduate 2023. I have taken courses like Advanced global illumination and
-					rendering, VR-technology, Media production for immersive environments, sound and image compression, Procedural methods for images, Modeling and animations, Techniques for advanced computergames, Design of computer games and Machine
-					learning for social media.
-
-				</p>
-
-			</section>
-
-			<section class="light">
-				<h2>Projects and labs</h2>
-				<h3>Modeling and animations</h3>
-				<img src="assets/flatshading.png" alt=""style="width:500px;height:400px;">
-				<br>
-				A series of labs in computer graphics. 
-				<br>
-				<a href="https://annawastling.github.io/reports/TNM079___Modeling_And_Animation__Lab_Report_1.pdf">Lab report for lab 1</a>
-				<br>
-				<a href="https://annawastling.github.io/reports/TNM079___Modeling_And_Animation__Lab_Report_2.pdf">Lab report for lab 2</a>
-				<br>
-				<a href="https://annawastling.github.io/reports/TNM079___Modeling_And_Animation__Lab_Report_3.pdf">Lab report for lab 3</a>
-				<br>
-				<a href="https://annawastling.github.io/reports/TNM079___Modeling_And_Animation__Lab_Report_4.pdf">Lab report for lab 4</a>
-				<br>
-				<a href="https://annawastling.github.io/reports/TNM079___Modeling_And_Animation__Lab_Report_5.pdf">Lab report for lab 5</a>
-				<br>
-				<a href="https://annawastling.github.io/reports/TNM079___Modeling_And_Animation__Lab_Report_6.pdf">Lab report for lab 6</a>
-				<h3>Monte Carlo Ray Tracer</h3>
-				<img src="assets/8.png" alt=""style="width:500px;height:500px;">
-				<br>
-				<p>A Monte carlo ray tracer was implemented in the CPU</p>
-				<a href="https://annawastling.github.io/reports/TNCG15_report (1).pdf"> Report</a>
-				<h3>Media production for immersive environments</h3>
-				<img src="assets/ladybug.png" alt=""style="width:500px;height:300px;">
-				<p>A shortfilm was produced for the dome in "Visualiseringscenter C". </p>
-				<h3>Image</h3>
-				<img src="assets/not_opt_32_50.png" alt=""style="width:500px;height:500px;">
-				<br>		
-				<p>A digital image reproduced by using other images from the same artist</p>
-				<a href="https://annawastling.github.io/reports/TNM097_projectreport.pdf"> Report</a>
-				<p>
-				</p>
-
-			</section>
-
-
-		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script type="module" src="main.js"></script>
 	</body>
 </html>

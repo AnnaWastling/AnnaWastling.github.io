@@ -1,82 +1,54 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'https://unpkg.com/three@0.138.3/examples/jsm/loaders/GLTFLoader.js';
+gsap.registerPlugin(ScrollTrigger);
 
-// Get a reference to the container element that will hold our scene
-const container = document.querySelector('#scene-container');
+const animation = document.getElementById("startAnimation");
+const animationContext = animation.getContext("2d");
 
-// create a Scene
-const scene = new THREE.Scene();
 
-// Set the background color
-scene.background = new THREE.Color('skyblue');
-// create the renderer
-const renderer = new THREE.WebGLRenderer();
+animation.height = screen.height;
+animation.width = screen.width;
 
-// next, set the renderer to the same size as our container element
-renderer.setSize(window.innerWidth , window.innerHeight);
-
-// finally, set the pixel ratio so that our scene will look good on HiDPI displays
-renderer.setPixelRatio(window.devicePixelRatio);
-renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-// add the automatically created <canvas> element to the page
-container.append(renderer.domElement);
-
-// Create a camera
-const fov = 35; // AKA Field of View
-const aspect = window.innerWidth / window.innerHeight;
-const near = 0.1; // the near clipping plane
-const far = 1000; // the far clipping plane
-
-const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-
-// every object is initially created at ( 0, 0, 0 )
-// move the camera back so we can view the scene
-camera.position.set( 103, 1, 8);
-camera.rotation.y = 90 * Math.PI / 180
-
-scene.fog = new THREE.Fog( scene.background, 1, 1000 );
-const hemilight = new THREE.HemisphereLight(0xffeeb1, 0x080820, 1);
-scene.add(hemilight);
-renderer.toneMapping = THREE.ReinhardToneMapping;
-renderer.toneMappingExposure = 2.3;
-renderer.shadowMap.enabled = true;
-// const ambientLight = new THREE.AmbientLight( 0xffffff, 0.4 );
-// scene.add( ambientLight );
-
-//Create a PointLight and turn on shadows for the light
-const light = new THREE.PointLight( 0xffa95c, 4);
-light.castShadow = true; // default false
-light.shadow.bias = -0.0001;
-light.shadow.mapSize.width = 1024*4;
-light.shadow.mapSize.height = 1024*4;
-scene.add( light );
-
-const assetLoader = new GLTFLoader();
-const modelUrl = new URL('assets/hemsida2.glb', import.meta.url);
-
-assetLoader.load(modelUrl.href, function(gltf) {
-  scene.add(gltf.scene);
-  gltf.scene.traverse(function (child) {
-    if (child.isMesh) {
-        child.castShadow = true
-        child.receiveShadow = true
-    }
-  })
-}, undefined, function(error) {
-  console.error(error);
+const animationInfo = {
+  totalFrames:99,
+  totalTime:50,
+  images: [],
+  currentFrame:0,
+  currentImage: (index) => `./assets/animation/hexagon${index.toString().padStart(4,"0")}.png`,
+};
+const img = new Image();
+for(let i = 1; i <= animationInfo.totalFrames; i++) {
+  const img = new Image();
+  img.src = animationInfo.currentImage(i);
+  animationInfo.images.push(img);
+}
+gsap.to(animationInfo, {
+  currentFrame: animationInfo.totalFrames,
+  snap: "currentFrame",
+  ease: "none",
+  scrollTrigger: {
+    trigger: animation,
+    start: "top",
+    end: `bottom+=${animationInfo.totalFrames * animationInfo.totalTime}`,
+    scrub: 2,
+    pin: true,
+    //   markers: true,
+  },
+  onUpdate: render,
 });
-
-
-function animate(){
-  requestAnimationFrame(animate);
-  renderer.render(scene,camera);
-  light.position.set(camera.position.x + 10, camera.position.y + 10, camera.position.z + 10)
+animationInfo.images[0].onload = ()=>{
+  animationContext.drawImage(animationInfo.images[0],   
+    0,
+    0,    
+    screen.width,
+    screen.height
+    );
 }
 
-animate()
-
-function moveCamera(){
-camera.position.x = 100 - window.scrollY / 40;
+function render(){
+  animationContext.drawImage(
+    animationInfo.images[animationInfo.currentFrame],
+    0,
+    0,
+    screen.width,
+    screen.height
+    );
 }
-document.onscroll = moveCamera

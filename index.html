@@ -1,49 +1,100 @@
 <!DOCTYPE html>
 <link rel="shortcut icon" href="#">
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Anna Wästling</title>
-		<link href="style.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	</head>
-	<body>
-			<div class="container">
-				<canvas id="startAnimation"></canvas>
-				<div class="title">
-					<h1 class="main-title">Anna Wästling</h1> 
-					<p class="main-description">M.sc. Student in Media Technology and Engineering - 5th year</p>
-				</div>
-				<div class="portfolio"><p>Portfolio</p></div>
-				<div class="about-me">
-					<h2 class="section-title-text">About me</h2>
-					<p>	
-						I am currently taking my degree in Master of Science in Media Technology
-						and Engineering. I study my fifth year and plan to graduate 2023. 
-					</p>
-				</div>
-				<div class="projects">
-					<h2 class="section-title-text">projects</h2>
-					<A HREF="projects.html" style="color: rgb(0, 0, 0); font-size: 100px;"><i class="fa fa-arrow-right" aria-hidden="true"></i></A>
-				</div>
-				<div class="knowledge">
-					<h2 class="section-title-text">knowledge</h2>
-					<p>I have taken courses like Advanced global illumination and
-						rendering, VR-technology, Media production for immersive environments, sound and image compression, Procedural methods for images, Modeling and animations, Techniques for advanced computergames, Design of computer games and Machine
-						learning for social media.</p>
-				</div>
-				<div class="contacts">
-					<h2 class="section-title-text">contacts</h2>
-					<i class="fa fa-envelope"></i> <p>Annawastling@hotmail.com</p>
-					<i class="fa fa-linkedin-square"></i> <br>
-					<A HREF=https://www.linkedin.com/in/anna-waestling> Visit my linkedin</A>
-				</div>
-				<div id="phoneblock" class="phoneblock"><p style="color: aliceblue; font-size: 200px;">&uarr;</p></div>
+
+<head>
+	<meta charset="utf-8">
+	<title>Anna Wästling</title>
+	<link href="style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<div class="container">
+		<canvas id="startAnimation"></canvas>
+		<div class="title">
+			<h1 class="main-title">Anna Wästling</h1>
+			<p class="main-description">M.sc. Student in Media Technology and Engineering - 5th year</p>
+		</div>
+		<div class="portfolio">
+			<p>Portfolio</p>
+		</div>
+		<div class="about-me">
+			<h2 class="section-title-text" style="color:white">About me</h2>
+			<p style="color:white">
+				My story started in Sala, Sweden, where I from a young age took an interest in technology.
+				I moved to Norrköping 2018 to take my degree in Master of Science in Media Technology
+				and Engineering. Right now I'm at my fifth and final year and plan to graduate 2023. I still have an
+				interest in technology and found a love in computer graphics programming.
+				In my spare time I like to create things, let that be by working in blender, unity, crocheting, making
+				clay earrings, digitally painting or coding, it doesn't really matter.
+			</p>
+		</div>
+		<div class="projects">
+			<h2 class="section-title-text">projects</h2>
+			<A HREF="projects.html" style="color: rgb(0, 0, 0); font-size: 100px;"><i class="fa fa-arrow-right"
+					aria-hidden="true"></i></A>
+		</div>
+		<div class="knowledge">
+			<h2 class="section-title-text">knowledge</h2>
+			<p>Through my education I've gained knowledge in many different coding languages.</p>
+			<div class="programming-section">
+				<div class="methods">class</div>
+				<span class="skills"> Skills</span>
+				<div style="color:white; display:inline;"> { </div>
+				<br>
+				<div class="variable">Programming</div>
+				<div style="color:white; display:inline;"> = [</div>
+				<span class="strings">
+					'C++', 'C#', 'C', Python', 'Java', 'Rust', 'MatLab'
+				</span>
+				<div class="float-right" style="color:white; display:inline;"> ]</div>
+				<br>
+				<div class="variable">Web_programming</div>
+				<div class="float-left" style="color:white; display:inline;"> = [</div>
+				<span class="strings">
+					'Javascript', 'HTML', 'CSS', 'TypeScript', 'SQL', 'Three.js' , 'Flutter', 'WebGL', 'React',
+					'Angular'
+				</span>
+				<div style="color:white; display:inline;"> ]; </div>
+				<br>
+				<div class="variable">Graphic_programming</div>
+				<div style="color:white; display:inline;"> =[ </div>
+				<span class="strings">
+					'OpenGL', 'HLSL', 'GLSL' , 'Lua'
+				</span>
+				<div style="color:white; display:inline;"> ]; </div>
+				<br>
+				<div class="variable">Tools</div>
+				<div style="color:white; display:inline;"> =[ </div>
+				<span class="strings">
+					'Unity', 'Unreal', 'Blender', 'Git', 'Figma', CMake
+				</span>
+				<div style="color:white; display:inline;"> ]; </div>
+				<br>
+				<div style="color:white; display:inline;"> }; </div>
 			</div>
-			
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script type="module" src="main.js"></script>
-	</body>
+		</div>
+		<div class="contacts">
+			<h2 class="section-title-text">contacts</h2>
+			<i class="fa fa-envelope"></i>
+			<p>Annawastling@hotmail.com</p>
+			<i class="fa fa-linkedin-square"></i> <br>
+			<A HREF=https://www.linkedin.com/in/anna-waestling style="color: black;"> Visit my linkedin</A>
+		</div>
+		<div id="phoneblock" class="phoneblock">
+			<p style="color: aliceblue; font-size: 200px;">&uarr;</p>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+		integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+		integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script type="module" src="main.js"></script>
+</body>
+
 </html>

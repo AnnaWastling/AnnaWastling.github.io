@@ -1,11 +1,29 @@
 gsap.registerPlugin(ScrollTrigger);
 
 const animation = document.getElementById("startAnimation");
+const phoneblock = document.getElementById("phoneblock");
 const animationContext = animation.getContext("2d");
 
+window.addEventListener('resize', resizeCanvas, false);
+window.addEventListener('orientationchange', resizeCanvas, false);
+resizeCanvas();
 
-animation.height = screen.height;
-animation.width = screen.width;
+function resizeCanvas() {
+  animation.width = screen.width;
+  animation.height = screen.height;
+  phoneblock.style.display = "none";
+  if (navigator.userAgent.match(/Android/i)
+  || navigator.userAgent.match(/webOS/i)
+  || navigator.userAgent.match(/iPhone/i)
+  || navigator.userAgent.match(/iPad/i)
+  || navigator.userAgent.match(/iPod/i)
+  || navigator.userAgent.match(/BlackBerry/i)
+  || navigator.userAgent.match(/Windows Phone/i)) {
+    animation.width = screen.width;
+    animation.height = screen.height/2;
+    phoneblock.style.display = "block";
+  }
+}
 
 const animationInfo = {
   totalFrames:99,
@@ -30,7 +48,6 @@ gsap.to(animationInfo, {
     end: `bottom+=${animationInfo.totalFrames * animationInfo.totalTime}`,
     scrub: 2,
     pin: true,
-    //   markers: true,
   },
   onUpdate: render,
 });
@@ -38,8 +55,8 @@ animationInfo.images[0].onload = ()=>{
   animationContext.drawImage(animationInfo.images[0],   
     0,
     0,    
-    screen.width,
-    screen.height
+    animation.width,
+    animation.height
     );
 }
 
@@ -48,7 +65,7 @@ function render(){
     animationInfo.images[animationInfo.currentFrame],
     0,
     0,
-    screen.width,
-    screen.height
+    animation.width,
+    animation.height
     );
 }

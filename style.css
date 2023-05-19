@@ -173,7 +173,7 @@ canvas {
 /*PHONE*/
 
 .phone {
-  height: 6300px;
+  height: 7000px;
   width: 100%;
   background: #CECECE;
   position: relative;
@@ -192,7 +192,7 @@ canvas {
 .phone .about-me {
   position: absolute;
   width: 100%;
-  top: 4150px;
+  top: 4550px;
   left: 0%;
 }
 
@@ -208,7 +208,7 @@ canvas {
 .phone .knowledge {
   position: absolute;
   width: 100%;
-  top: 4900px;
+  top: 5400px;
   left: 0%;
   text-align: center;
 }
@@ -217,7 +217,7 @@ canvas {
 .phone .contacts {
   position: absolute;
   width: 100%;
-  top: 5900px;
+  top: 6400px;
   left: 0%;
   text-align: center;
 }
